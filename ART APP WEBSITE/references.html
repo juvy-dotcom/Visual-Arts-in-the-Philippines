@@ -1,0 +1,296 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />  
+  <title>References - Philippine Arts Website</title>  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />  
+  <style>  
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      background: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2cffb2e9-0310-418d-95a2-4d319cab7a02.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f0f0;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(34,34,34,0.7);
+      z-index: -1;
+    }
+
+   
+
+
+    .main-content {
+      margin-left: 72px;
+      padding: 40px;
+      height: 100vh;
+      overflow-y: auto;
+      padding-bottom: 100px;
+      width: calc(100% - 60px);
+      transition: margin-left 0.3s;
+      min-height: 100vh;
+    }
+  
+    .sidebar.expanded ~ .main {
+    margin-left: 220px;
+    width: calc(100% - 250px);
+    }
+
+    .sidebar:hover ~ .main-content {
+      margin-left: 220px;
+    }  
+
+
+    header.main-header {
+      padding: 24px 32px 16px;
+      font-weight: 700;
+      font-size: 1.125rem;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #303030cc;
+      border-radius: 12px;
+      max-width: fit-content;
+      margin-bottom: 16px;
+    }
+
+    .references-box {
+      background: rgba(64, 64, 64, 0.85);
+      padding: 32px 36px;
+      border-radius: 24px;
+      max-width: 2000px;
+      width: 100%;
+      max-height: 70vh;
+      overflow-y: auto;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.7);
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.5;
+      white-space: normal;
+      color: #eee;
+    }
+
+    .references-box a {
+      display: inline-block;
+      color: #aad4ff;
+      text-decoration: underline;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .references-box a:hover,
+    .references-box a:focus {
+      transform: scale(0.97);
+      color: #ffffff;
+    }
+
+    .references-box ul {
+      margin: 0;
+      padding-left: 50px;
+      columns: 2;
+      column-gap: 40px;
+    }
+
+    .references-box li {
+      margin-bottom: 8px;
+      break-inside: avoid;
+    }
+
+    @media (min-width: 1200px) {
+      .references-box ul {
+        columns: 3;
+      }
+    }
+
+   
+
+    .main-content::-webkit-scrollbar {
+      width: 10px;
+    }
+    .main-content::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .main-content::-webkit-scrollbar-thumb {
+      background-color: #727272aa;
+      border-radius: 6px;
+      border: 2px solid transparent;
+      background-clip: content-box;
+    }
+
+    @media (max-width: 767px) {
+      .sidebar {
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        height: 56px;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 100;
+      }
+
+      .sidebar ul {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        overflow-x: auto;
+        padding: 0 8px;
+      }
+
+      .sidebar li {
+        flex-direction: column;
+        padding: 8px;
+      }
+
+      .sidebar.expanded {
+        width: 100%;
+      }
+
+      .main-content {
+        margin-left: 0;
+        margin-top: 80px;
+      }
+
+      .references-box ul {
+        columns: 1;
+      }
+    }
+  </style>  
+</head>  
+<body>  
+  <div class="sidebar">  
+       <a href="indexK.html"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="biography.html"><i class="fas fa-user"></i><span>Biographies</span></a>
+      <a href="literary.html"><i class="fas fa-feather-alt"></i><span>Literary Works</span></a>
+      <a href="legacy.html"><i class="fas fa-flag"></i><span>Legacy</span></a>
+      <a href="timeline.html"><i class="fas fa-calendar"></i><span>Timeline</span></a>
+      <a href="quotes.html"><i class="fas fa-quote-left"></i><span>Quotes</span></a>
+      <a href="illustrations.html"><i class="fas fa-paint-brush"></i><span>Illustrations</span></a>
+      <a href="interviews.html"><i class="fas fa-comments"></i><span>Opinions</span></a>
+      <a href="interactive.html"><i class="fas fa-gamepad"></i><span>Interactive</span></a>
+      <a href="references.html"><i class="fas fa-book-open"></i><span>References</span></a>
+  </div>  
+
+  <div class="main-content">  
+    <header class="main-header">  
+      <i class="fas fa-book-open"></i> REFERENCES:  
+    </header>  
+
+    <section class="references-box" tabindex="0">  
+      <h1>HOMEPAGE</h1>
+      <ul>
+        <li><a href="https://ncca.gov.ph/about-culture-and-arts/culture-profile/visual-arts/" target="_blank">National Commission for Culture and the Arts. (2024, February 12). National Committee on Visual Arts.</a></li>
+        <li><a href="https://www.nationalmuseum.gov.ph/national-museum-of-fine-arts/" target="_blank">National Museum of the Philippines. (n.d.). National Museum of Fine Arts.</a></li>
+        <li><a href="https://artsandculture.google.com" target="_blank">Google Arts & Culture. (n.d.). Explore arts and culture around the world.</a></li>
+        <li><a href="https://artesdelasfilipinas.com/archives/50/the-manunggul-jar-as-a-vessel-of-history" target="_blank">Artes de las Filipinas. (n.d.). The Manunggul Jar as a vessel of history.</a></li>
+        <li><a href="https://www.nationalmuseum.gov.ph/exhibitions/fine-arts/gallery-spoliarium-hall/" target="_blank">National Museum of the Philippines. (n.d.). Gallery: Spoliarium Hall.</a></li>
+        <li><a href="https://www.esquiremag.ph/culture/books-and-art/the-lady-in-amorsolo-s-unfinished-painting-is-none-other-than-vicki-belo-s-mother-a1729-20181029" targer="_blank">Esquire Philippines. (2018, October 29). The lady in Amorsolo’s unfinished painting is none other than Vicki Belo’s mother.</a></li>
+      </ul>
+      
+      <h1>BIOGRAPHY</h1>
+      <ul>
+        <li><a href="https://www.inquirer.net/" target="_blank">Inquirer.net. (n.d.). Philippine news for Filipinos.</a></li>
+        <li><a href="https://ncca.gov.ph/about-culture-and-arts/culture-profile/national-artists-of-the-philippines/victorio-c-edades/" target="_blank">National Commission for Culture and the Arts. (n.d.). Victorio C. Edades.</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Cian_Dayrit" target="_blank">Wikipedia contributors. (n.d.). Cian Dayrit. Wikipedia. Retrieved June 16, 2025,</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Pacita_Abad" target="_blank">Wikipedia contributors. (n.d.). Pacita Abad. Wikipedia. Retrieved June 16, 2025,</a></li>
+        <li><a href="https://www.namiart-gallery.com/collections/ricky-francisco?srsltid=AfmBOooubDV-WW5MceAv3qKR3GAX5pRuYDiMe39gaQ_jmyarI9L0pAcq" target="_blank">Nami Art Gallery. (n.d.). Ricky Francisco collection.</a></li>
+      </ul>
+      
+      <h1>LITERARY WORKS:</h1>  
+      <ul>  
+        <li><a href="https://medium.com/@jordangasparr/spoliarium-by-juan-luna-f1b3103ef450" target="_blank">Gaspar, J. (2018, January 4). “Spoliarium” by Juan Luna - Jordan Gaspar - Medium.</a></li>  
+        <li><a href="https://www.museodelprado.es/en/the-collection/art-work/cleopatra/6572106b-eea1-49cc-b616-78cc11aa2f97" target="_blank">Museo del Prado. Cleopatra. (n.d.).</a></li>  
+        <li><a href="https://epa.culturalcenter.gov.ph/3/82/23003" target="_blank">Cultural Center of the Philippines. (n.d.-a). Spoliarium by Juan Luna.0</a></li>  
+        <li><a href="https://epa.culturalcenter.gov.ph/3/82/2253/" target="_blank">Cultural Center of the Philippines. (n.d.-b). Planting rice by Fabian de la Rosa.</a></li>  
+        <li><a href="https://epa.culturalcenter.gov.ph/3/82/2272/" target="_blank">Cultural Center of the Philippines. (n.d.-c). Mango pickers by Fernando Amorsolo.</a></li>  
+        <li><a href="https://ybcclub8.artstation.com/projects/zDOGgd" target="_blank">YBCClub8. (n.d.). Illustration of Philippine culture [ArtStation profile]. ArtStation.</a></li>  
+        <li><a href="https://epa.culturalcenter.gov.ph/3/82/2149/" target="_blank">Cultural Center of the Philippines (CCP). (n.d.).</a></li>  
+        <li><a href="https://ilovetoeatbooks.blogspot.com/2012/10/the-fruit-pickers-under-mango-tree.html" target="_blank">Ilovetoeatbooks. (2012, October). The Fruit Pickers Under the Mango Tree.</a></li>  
+        <li><a href="https://ateneoartgallery.com/collections/vendador-de-flores" target="_blank">Ateneo Art Gallery. (n.d.). Vendador de flores.</a></li>  
+        <li><a href="https://www.invaluable.com/auction-lot/arturo-luz-1926-2021-imaginary-landscape-6-c-f884b78bb4" target="_blank">Invaluable. (n.d.). Arturo Luz (1926–2021) Imaginary Landscape 6.</a></li>  
+        <li><a href="https://www.singulart.com/blog/en/2024/04/12/bagong-taon-by-arturo-luz/" target="_blank">Singulart. (2024, April 12). “Bagong Taon” by Arturo Luz.</a></li>  
+        <li><a href="https://members.salcedoauctions.com/item/13247" target="_blank">Salcedo Auctions. (n.d.).</a></li>  
+        <li><a href="https://www.scribd.com/document/544722336/1-THE-BIRD-SEL-WPS-Office" target="_blank">Scribd. (n.d.). The Bird SEL</a></li>  
+        <li><a href="https://www.theartesan.com/product-page/pounding-rice-nagbabayo" target="_blank">The Artesan Gallery + Studio. (n.d.). Pounding Rice (Nagbabayo).</a></li>  
+        <li><a href="https://epa.culturalcenter.gov.ph/3/82/2222/" target="_blank">Cultural Center of the Philippines. (n.d.). Imaginary Landscape 6 by Arturo Luz.</a></li>  
+        <li><a href="https://members.salcedoauctions.com/item/30990" target="_blank">Salcedo Auctions. (n.d.).</a></li>  
+      </ul>  
+      
+      <h1>LEGACY:</h1>  
+      <ul>  
+        <li><a href="https://archive.org/details/philippinelitera0000unse" target="_blank">Anonymous. (n.d.). Philippine literature: A history and anthology. Internet Archive.</a></li>  
+        <li><a href="https://www.studocu.com/ph/document/pamantasan-ng-lungsod-ng-maynila/bs-biology/guillermo-art-and-society/17946286" target="_blank">Guillermo, A. (n.d.). Art and society. Studocu.</a></li>  
+        <li><a href="https://www.academia.edu/40794132/Filipino_Prehistory_Rediscovering_Pre_colonial_Heritage" target="_blank">Jocano, F. L. (n.d.). Filipino prehistory: Rediscovering pre-colonial heritage. Academia.edu.</a></li>  
+        <li><a href="https://archium.ateneo.edu/cgi/viewcontent.cgi?article=1139&context=socialtransformations" target="_blank">Zialcita, F. N. (2015). Why understanding culture matters. Social Transformations: Journal of the Global South, 3(2), 1–24.</a></li>  
+        <li><a href="https://www.ejbiotechnology.info/index.php/ejbiotechnology/article/view/v7n2-8" target="_blank">Ramilo, C. A., & Laurena, A. C. (2004). Ubiquitous expression of a synthetic gene confers resistance to bacterial wilt in transgenic tomato. Electronic Journal of Biotechnology, 7(2), 181–196.</a></li> 
+      </ul>
+      
+      <h1>TIMELINE:</h1>  
+      <ul>  
+        <li><a href="https://www.studocu.com/ph/document/technological-university-of-the-philippines/bs-in-information-system/visual-arts-history-and-timeline-world-and-philippines-art-appreciation/54215067" target="_blank">Anonymous. (n.d.). Visual arts history and timeline: World and Philippines (Art appreciation). Studocu.</a></li> 
+        <li><a href="https://calabarzone.wordpress.com/2020/11/05/the-timeline-of-philippine-art-history/" target="_blank">Calabarzon Wordpress. (2020, November 5). The timeline of Philippine art history.</a></li>  
+        
+      </ul>
+
+      <h1>QUOTES OF PH VISUAL ARTISTS:</h1>  
+      <ul>  
+        <li><a href="https://www.esquiremag.ph/long-reads/features/benedicto-bencab-cabrera-profile-july-a5102-20240708-lfrm2" target="_blank">San Diego, B. (2024, July. National artist Benedicto "BenCab" Cabrera on art, passion, and legacy. Esquire Philippines.</a></li>  
+        <li><a href="https://www.bworldonline.com/arts-and-leisure/2024/07/10/606969/arturo-luzs-minimalist-works-of-art/" target="_blank">BWorld Staff. (2024, July 10). Arturo Luz’s minimalist works of art. BusinessWorld Online.</a></li>  
+        <li><a href="https://ncca.gov.ph/about-culture-and-arts/in-focus/an-interview-with-national-artist-for-sculpture-napoleon-abueva/" target="_blank">National Commission for Culture and the Arts. (n.d.). An interview with National Artist for Sculpture Napoleon Abueva.</a></li>  
+        <li><a href="https://www.tatlerasia.com/lifestyle/arts/ang-kiukok-trivia" target="_blank">Tatler Asia. (n.d.). Interesting facts about Ang Kiukok, the modern artist who captured agony on canvas.</a></li>  
+        <li><a href="https://geringerart.com/biography-of-jose-t-joya-philippine-national-artist/" target="_blank">Geringer Art Ltd. (n.d.). Biography of Jose T. Joya, Philippine National Artist.</a></li>  
+        <li><a href="https://www.luxuo.com/culture/contemporary-artists-in-southeast-asia-interview-with-filipino-painter-and-sculptor-ronald-ventura.html" target="_blank">LUXUO. (n.d.). Contemporary artists in Southeast Asia: Interview with Filipino painter and sculptor Ronald Ventura.</a></li>  
+        <li><a href="https://www.stpi.com.sg/artists/anita-magsaysay-ho/" target="_blank">STPI – Creative Workshop & Gallery. (n.d.). Anita Magsaysay-Ho.</a></li>  
+        <li><a href="https://lifestyle.inquirer.net/500003/the-value-of-giving-new-life-to-forgotten-objects-according-to-visual-artist-christina-ling-quisumbing-ramilo/" target="_blank">Cruz, M. (2024, May 13). The value of giving new life to forgotten objects, according to visual artist Christina Ling Quisumbing Ramilo. Philippine Daily Inquirer.</a></li>  
+        <li><a href="https://www.sfmoma.org/read/pacita-abad-a-living-tapestry-of-places/" target="_blank">SFMOMA. (n.d.). Pacita Abad: A living tapestry of places. San Francisco Museum of Modern Art.</a></li>  
+      </ul>
+      
+      <h1>ILLUSTRATION AND PHOTOS:</h1>  
+      <ul>  
+        <li><a href="https://nhcp.gov.ph/articles/espana-y-filipinas-juan-lunas-artistic-journey-through-colonialism-and-national-identity/" target="_blank">National Historical Commission of the Philippines. (n.d.). España y Filipinas: Juan Luna’s artistic journey through colonialism and national identity.</a></li>  
+        <li><a href="https://epa.culturalcenter.gov.ph/3/82/2222/" target="_blank">Cultural Center of the Philippines. (n.d.). España y Filipinas. Cultural Content Digital Archives.</a></li> 
+        <li><a href="https://en.wikipedia.org/wiki/Las_Virgenes_Cristianas_Expuestas_al_Populacho" target="_blank">Wikipedia contributors. (n.d.). Las Vírgenes Cristianas Expuestas al Populacho. Wikipedia. Retrieved June 16, 2025</a></li>  
+        <li><a href="https://www.flickr.com/photos/28098727@N00/52312996223" target="_blank">FabiolaG. (2022, September 11). Las Vírgenes Cristianas Expuestas al Populacho (painting) [Photograph].</a></li>  
+        <li><a href="https://www.phillife.co/paintings-philippines/" target="_blank">PhilLife. (n.d.). Most famous paintings in the Philippines: A glimpse of Filipino artistry.</a></li>  
+        <li><a href="https://www.namiart-gallery.com/blogs/news/most-famous-filipino-painters-that-art-collectors-should-know" target="_blank">Nami Art Gallery. (n.d.). Most famous Filipino painters that art collectors should know.</a></li>  
+        
+      </ul>
+
+      <h1>INTERVIEWS AND OPINIONS</h1>  
+      <ul>  
+        <li><a href="https://mulatmapatusapan.up.edu.ph/an-interview-with-dr-patrick-flores">Mulatadmin, & Mulatadmin. (2022, March 24). An Interview with Dr. Patrick Flores - MULAT. MULAT - Mapping University Museums in the Philippines. https://mulatmapatusapan.up.edu.ph/an-interview-with-dr-patrick-flores</a></li>  
+        <li><a href="https://artsthoughtsandphilosophy.wordpress.com/2018/12/01/review-on-alice-guillermos-contemporary-philippine-aesthetics/" target="_blank">Capacio, J. (2018, December 1). Review on Alice Guillermo’s contemporary Philippine aesthetics. Alchie’s Blog. https://artsthoughtsandphilosophy.wordpress.com/2018/12/01/review-on-alice-guillermos-contemporary-philippine-aesthetics/</a></li> 
+        <li><a href="https://www.thediarist.ph/cid-reyes-what-he-does-is-not-for-the-faint-of-heart/" target="_blank">Alcantara, A. (2022, March 21). Cid Reyes: What he does is not for the faint of heart. The Diarist.ph. https://www.thediarist.ph/cid-reyes-what-he-does-is-not-for-the-faint-of-heart/</a></li>  
+        <li><a href="https://itspiefelizarta.wordpress.com/" target="_blank">Student blog. (n.d.). Student Blog. https://itspiefelizarta.wordpress.com/</a></li>  
+        <li><a href="https://pinaywise.com/philippines-facts/discover-philippine-contemporary-art-now/?srsltid=AfmBOoolG8gHD7Mj4kejhjixbBGvTmiO70bjQJ6ao41Wziaq_tUvuOmx" target="_blank">Wise. (2024, February 7). Discover philippine contemporary art now. Pinay Wise. https://pinaywise.com/philippines-facts/discover-philippine-contemporary-art-now/?srsltid=AfmBOoolG8gHD7Mj4kejhjixbBGvTmiO70bjQJ6ao41Wziaq_tUvuOmx</a></li>  
+        <li><a href="https://arttalksea.com/interview/elaine-roberto-navas-in-conversation-with-tony-godfrey/" target="_blank">Artist Interview - Elaine Roberto Navas in conversation with Tony Godfrey - Art Talk South East Asia. (2022, April 15). Art Talk South East Asia. https://arttalksea.com/interview/elaine-roberto-navas-in-conversation-with-tony-godfrey/</a></li>  
+        
+      </ul>
+      </section>
+
+    <footer class="footer-bar">  
+      ©2025 Philippine Arts Website | Cavite State University  
+    </footer>  
+  </div>  
+
+  <script>  
+    function toggleSidebar() {  
+      const sidebar = document.getElementById('sidebar');  
+      sidebar.classList.toggle('expanded');  
+    }  
+  </script>  
+</body>  
+</html>

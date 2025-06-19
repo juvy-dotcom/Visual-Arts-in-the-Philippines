@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Biographical Section - Filipino Artists</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Open Sans', sans-serif;
+      background: #D8BFA3;
+      color: #2E2E2E;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    header {
+      margin-left: 60px;
+      padding: 20px;
+      background-color: #382d28;
+      color: white;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      transition: margin-left 0.3s ease-in-out;
+    }
+
+    .sidebar:hover ~ header {
+      margin-left: 200px;
+    }
+
+    main {
+      margin-left: 60px;
+      padding: 40px 60px;
+      flex: 1;
+      transition: margin-left 0.3s ease-in-out;
+      padding-bottom: 100px; 
+
+    }
+
+    .sidebar:hover ~ main {
+      margin-left: 200px;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #FFF8F0;
+      text-shadow: 2px 2px 4px rgba(31, 30, 30, 0.993);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: #4E3629;
+      border-bottom: 2px solid #A0522D;
+      font-size: 28px;
+      padding-bottom: 5px;
+    }
+
+    .bio-section {
+      background-color: #FFF8F0;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .artist-name {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    footer {
+    position: fixed;
+    bottom: 0;
+    left: 60px;
+    width: calc(100% - 60px);
+    background-color: #3B3126;
+    padding: 20px;
+    font-size: 0.9em;
+    text-align: center;
+    transition: left 0.3s ease-in-out, width 0.3s ease-in-out;
+    z-index: 999;
+}
+
+  .sidebar:hover ~ footer {
+    left: 200px;
+    width: calc(100% - 200px);
+}
+
+    .img1 {
+      width: 300px;
+      height: 300px;
+      border-radius: 10px;
+      margin: 20px auto; 
+      display: block; 
+    }
+
+    .img1:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .header-img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      margin-bottom: 10px;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <a href="indexK.html"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="biography.html"><i class="fas fa-user"></i><span>Biographies</span></a>
+    <a href="literary.html"><i class="fas fa-feather-alt"></i><span>Literary Works</span></a>
+    <a href="legacy.html"><i class="fas fa-flag"></i><span>Legacy</span></a>
+    <a href="timeline.html"><i class="fas fa-calendar"></i><span>Timeline</span></a>
+    <a href="quotes.html"><i class="fas fa-quote-left"></i><span>Quotes</span></a>
+    <a href="illustrations.html"><i class="fas fa-paint-brush"></i><span>Illustrations</span></a>
+    <a href="interviews.html"><i class="fas fa-comments"></i><span>Opinions</span></a>
+    <a href="interactive.html"><i class="fas fa-gamepad"></i><span>Interactive</span></a>
+    <a href="references.html"><i class="fas fa-book-open"></i><span>References</span></a>
+  </div>
+
+
+  <header>
+    <img src="images/bembem.jpg" alt="Museum Banner" class="header-img">
+    <h1>Biographical Section</h1>
+    <p>Featuring Filipino Artists in Visual Arts</p>
+  </header>
+
+  <main>
+    <section class="bio-section">
+      <h2>Fernando Amorsolo </h2>
+      <div class="artist-name">(1892 - 1972)</div>
+      <a href="https://www.spellmangallery.com/artists/fernando-amorsolo" target="_blank">
+      <img class= "img1"src="images/Fernando_Amorsolo.png"></a>
+      <p>Fernando Amorsolo y Cueto (1892-1972), known as the "Grand Old Man of Philippine Art," was a celebrated Filipino painter and the first National Artist of the Philippines for Visual Arts, renowned for his illuminated landscapes and romanticized depictions of rural life. Born in Manila but raised in Daet, Camarines Norte, he developed a deep appreciation for the countryside, which became a central theme in his works. He studied art under his uncle Fabian de la Rosa and later earned honors from the University of the Philippines in 1916 before briefly attending the Real Academia de Bellas Artes de San Fernando in Madrid. His signature technique, backlighting, gave his paintings a luminous, sunlit quality, often featuring idyllic rural scenes and the provincial Filipina maiden. Amorsolo dedicated 38 years to teaching at the University of the Philippines, influencing generations of artists. His works are housed in prestigious collections, including the Ateneo Art Gallery and the National Museum of the Philippines. Throughout his career, he received numerous accolades, such as the Rizal Pro Patria Award and UNESCO's Gold Medal, leaving a lasting legacy in Filipino art and culture.</p>
+    </section>
+
+    <section class="bio-section">
+      <h2>José Joya</h2>
+      <div class="artist-name">(1931-1995)</div>
+      <a href="https://geringerart.com/biography-of-jose-t-joya-philippine-national-artist/#:~:text=National%20artist%20Jose%20Joya%20was%20a%20pioneer%20modern,and%20flowering%20of%20abstract%20expressionism”%20in%20the%20Philippines" target="_blank">
+      <img class= "img1"src="images/Jose Joya.jpg"></a>
+      <p>Jose Tanig Joya was born on June 3, 1931 – 1995. He was a pioneering modern and abstract Filipino artist celebrated for his work as a painter, printmaker, mixed-media artist, and ceramicist, and is credited with spearheading the growth of abstract expressionism in the Philippines, drawing on vibrant color inspired by the Philippine landscape and integrating elements like rice paper in his transparent collages; initially aspiring to become an architect, he instead pursued painting at the University of the Philippines under notable mentors such as Tolentino and Agbayani, graduating magna cum laude in 1953 before studying in Madrid and completing his master's at Cranbrook in Michigan in 1956 through a Fulbright grant, and as his career unfolded, Joya transitioned from representational to abstract works influenced by peers like Manansala and his involvement with the Philippine Art Gallery, eventually representing the Philippines alongside Napoleon Abueva at the 1964 Venice Biennale with pieces like “Granadian Arabesque,” and taking on leadership roles such as president of the Art Association of the Philippines (1962–65), dean of the UP College of Fine Arts (1970–78), and chairperson of the National Committee on Visual Arts (1987–95); he produced large murals like “Lanterns of Enlightenment” and “Mariveles,” traveled extensively, received international recognition including France’s Order of Chevalier des Arts et Lettres in 1987, and was posthumously named National Artist in 2003 for his revolutionary contributions to Filipino abstract art.</p>
+    </section>
+
+    <section class="bio-section">
+      <h2>Pacita Abad</h2>
+      <div class="artist-name">(1946-2004)</div>
+      <a href="https://www.artnet.com/artists/pacita-abad/biography" target="_blank">
+      <img class= "img1"src="images/Pacita Abad.jpg"></a>
+      <p>Pacita Abad (1946–2004), a Modern painter from Basco, Batanes, Philippines, was renowned for her ever-evolving and experimental style influenced by her global travels to over 80 countries; after studying at the Corcoran School of Art in Washington, D.C., and The Art Students League in New York, she began her career in the 1970s with figurative and socio-political works addressing themes like hunger, then transitioned into colorful naturalist and eventually abstract art, incorporating diverse materials such as ceramic, fabric, glass, mylar, and even circuit boards into her mixed media pieces, most notably through her innovative trapunto painting technique, which involved stuffing and stitching canvases to give them a sculptural feel; inspired deeply by indigenous materials and her own life experiences, she described herself as a painter who creates “from the guts,” and in her later years worked passionately on a series called Obsession, centered on a circle motif, culminating in one of her final projects—painting a 55-meter bridge in Singapore with thousands of vibrant circles, now known as “Pacita’s Painted Bridge,” completed while battling lung cancer; by the time of her death at age 58 in 2004, Abad had produced over 3,500 artworks, held more than 40 solo and 50 group exhibitions worldwide, and had her works represented in collections across more than 70 countries.</p>
+    </section>
+   
+    <section class="bio-section">
+      <h2>Ronald Ventura</h2>
+      <div class="artist-name">(1973-PRESENT)</div>
+      <a href="https://www.artnet.com/artists/ronald-ventura/biography" target="_blank">
+      <img class= "img1"src="images/ronald ventura.jpg"></a>
+      <p>Ronald Ventura (b. 1973, Manila, Philippines) is a prominent Filipino contemporary artist known for his multi-layered paintings and sculptures that explore complex imagery often centered around the human form; after earning his BFA in Painting from the University of Santo Tomas in 1993, he returned to teach there while beginning his career with solo exhibitions such as All Souls Day and Innerscapes in 2000, and went on to receive accolades including the 2001 Artist of the Year from Art Manila and the 2005 Ateneo Art Gallery Studio Residency Grant in Sydney for his graphite-on-canvas series The Human Study; his international reputation expanded through participation in events like the 2009 Prague Biennale and his debut U.S. exhibition Metaphysics of Skin at Tyler Rollins Fine Art Gallery in New York, followed by A Thousand Islands in 2011, the same year his painting Greyhound sold for US$1.1 million at Sotheby’s in Hong Kong, setting a record for a contemporary Southeast Asian artwork.</p>
+    </section>
+
+    <section class="bio-section">
+      <h2>Andres Barrioquinto</h2>
+      <div class="artist-name">(1975-PRESENT)</div>
+      <a href="https://www.artnet.com/artists/andres-barrioquinto/ target="_blank">
+      <img class= "img1"src="images/andres barrioquinto.jpg"></a>
+      <p>Born in the Philippines in 1975, Andres Barrioquinto is a renowned contemporary artist celebrated for his figurative and surrealistic paintings, which captivate audiences with their vivid colors, ornate details, and rich symbolism; showing an early passion for art, he later honed his skills at the University of the Philippines, where he developed a signature style blending traditional and modern elements, and his emotionally resonant works have been exhibited across the Philippines, Japan, Singapore, and the United States, earning him critical acclaim and a devoted following; among his standout pieces is Procession (oil on canvas), which fetched $359,777 at auction, the highest sale price for his work to date, showcasing his exceptional mastery of color and light, while his artistic practice—spanning painting and sculpture—solidifies his influence both in the Philippine art scene and internationally.</p>
+  </main>
+
+  <footer>
+      &copy; 2025 Philippine Arts Website | Cavite State University
+  </footer>
+
+</body>
+</html>

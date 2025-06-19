@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Philippine Arts and Culture - Interviews</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #726153;
+      color: #333;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    
+
+    .sidebar {
+      width: 70px;
+      background-color: #3b3126;
+      transition: width 0.3s ease;
+      position: fixed;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 30px;
+      z-index: 1000;
+    }
+
+    .sidebar:hover {
+      width: 220px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #fff;
+      width: 100%;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      transition: background 0.3s;
+    }
+
+    .sidebar a i {
+      min-width: 25px;
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+
+    .sidebar a span {
+      display: none;
+    }
+
+    .sidebar:hover a span {
+      display: inline;
+    }
+
+    .sidebar a:hover {
+      background-color: #6e614f;
+    }
+
+    .content {
+      margin-left: 70px;
+      padding: 100px 40px;
+      flex: 1;
+      transition: margin-left 0.3s ease;
+    }
+
+    .sidebar:hover ~ .content {
+      margin-left: 220px;
+    }
+
+    h1, h2 {
+      color: #1e1e2f;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 15px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #3b3126;
+      color: #fff;
+      position: fixed;
+      bottom: 0;
+      left: 70px;
+      width: calc(100% - 70px);
+      transition: left 0.3s, width 0.3s;
+    }
+
+    .sidebar:hover ~ footer {
+      left: 220px;
+      width: calc(100% - 220px);
+    }
+
+    section {
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    .interview {
+      margin: 20px 0;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #f9f9f9;
+    }
+
+    .interview img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .interview h3 {
+      margin-bottom: 10px;
+      color: #343a40;
+      font-weight: 700;
+    }
+
+    .interview p {
+      margin: 8px 0 0;
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .interview p strong {
+      color: #444;
+    }
+
+    .interview p a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    .interview p a:hover,
+    .interview p a:focus {
+      text-decoration: underline;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+
+
+
+<div class="sidebar">
+    <a href="indexK.html"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="biography.html"><i class="fas fa-user"></i><span>Biographies</span></a>
+    <a href="literary.html"><i class="fas fa-feather-alt"></i><span>Literary Works</span></a>
+    <a href="legacy.html"><i class="fas fa-flag"></i><span>Legacy</span></a>
+    <a href="timeline.html"><i class="fas fa-calendar"></i><span>Timeline</span></a>
+    <a href="quotes.html"><i class="fas fa-quote-left"></i><span>Quotes</span></a>
+    <a href="illustrations.html"><i class="fas fa-paint-brush"></i><span>Illustrations</span></a>
+    <a href="interviews.html"><i class="fas fa-comments"></i><span>Opinions</span></a>
+    <a href="interactive.html"><i class="fas fa-gamepad"></i><span>Interactive</span></a>
+    <a href="references.html"><i class="fas fa-book-open"></i><span>References</span></a>
+  </div>
+<main class="content" tabindex="0">
+  <section id="interviews">
+    <h1>Interviews and Opinions</h1>
+
+    <article class="interview">
+      <img src="images/Patrick Flores.jpg" alt="Patrick Flores" />
+      <h3>Patrick Flores</h3>
+      <p><strong>Opinion:</strong>" I learned art history within a Humanities perspective, a liberal arts orientation that was more integrative than specialist. 
+        In many ways, it was interdisciplinary, inflected by cultural politics that may have come from activism and anthropology." 
+      </p>
+      <p><strong>Source:</strong> <a href="https://mulatmapatusapan.up.edu.ph/an-interview-with-dr-patrick-flores
+      " target="_blank">https://mulatmapatusapan.up.edu.ph/an-interview-with-dr-patrick-flores </a></p>
+    </article>
+
+    <article class="interview">
+      <img src="images/Allice Gullermo.jpg" alt="Allice Guillermo" />
+      <h3>Allice Guillermo</h3>
+      <p><strong>Opinion:</strong> She explained that " Aesthetics is not just about the appreciation of artistic value to an art or to how great it look, aesthetics is the philosophy of art that focuses on the understanding of the idea behind the art and its nature, in line with the factors affecting its expressiveness which is mostly from the certain condition of time and place. "</p>
+      <p><strong>Source:</strong> <a href="https://artsthoughtsandphilosophy.wordpress.com/2018/12/01/review-on-alice-guillermos-contemporary-philippine-aesthetics/" target="_blank">https://artsthoughtsandphilosophy.wordpress.com/2018/12/01/review-on-alice-guillermos-contemporary-philippine-aesthetics/</a></p>
+    </article>
+
+    <article class="interview">
+      <img src="images/Cid Reyes.jpg" alt="Cid Reyes" />
+      <h3>Cid Reyes</h3>
+      <p><strong>Opinion:</strong>"This profession is not for the faint of heart, this is especially true during the pandemic when artists, they be in visual or performance arts have been among the most affected, professionally and economically". 
+        He countered that by saying " Painting is important because it allows us to communicate ideas, elevates us beyond brutishness, and allows for individual style or expression."</p>
+      <p><strong>Source:</strong> <a href="https://www.thediarist.ph/cid-reyes-what-he-does-is-not-for-the-faint-of-heart/" target="_blank">https://www.thediarist.ph/cid-reyes-what-he-does-is-not-for-the-faint-of-heart/</a></p>
+    </article>
+
+    <article class="interview">
+      <img src="images/Buen Calubayan.jpeg" alt="Buen Calubayan" />
+      <h3>Buen Calubayan</h3>
+      <p><strong>Opinion:</strong>"In my point of view the paintings recognize the beauty and simplicity of life of the Filipinos. 
+        It creates a wonderful painting that symbolizes the simple and meaningful life of a Filipino that despite of the storms we’ve encounter, we stand as a one Filipino."</p>
+      <p><strong>Source:</strong> <a href="https://www.manilatimes.net" target="_blank">https://www.manilatimes.net</a></p>
+    </article>
+
+    <article class="interview">
+      <img src="images/Neil Pasilan.jpg" alt="Neil Pasilan" />
+      <h3>Neil Pasilan</h3>
+      <p><strong>Opinion:</strong>“My multi-layered paintings invite viewers to explore the intricacies of the human experience and the beauty of imperfections.”</p>
+      <p><strong>Source:</strong> <a href="hhttps://pinaywise.com/philippines-facts/discover-philippine-contemporary-art-now/?srsltid=AfmBOoolG8gHD7Mj4kejhjixbBGvTmiO70bjQJ6ao41Wziaq_tUvuOmx" target="_blank">https://pinaywise.com/philippines-facts/discover-philippine-contemporary-art-now/?srsltid=AfmBOoolG8gHD7Mj4kejhjixbBGvTmiO70bjQJ6ao41Wziaq_tUvuOmx</a></p>
+    </article>
+
+    <article class="interview">
+      <img src="images/Elaine Roberto Navas.jpg" alt="Elaine Roberto Navas" />
+      <h3>Elaine Roberto Navas</h3>
+      <p><strong>Opinion:</strong>"Drawing and art is a natural thing as eating and walking. Whenever I can draw or paint, I feel like my true self, If I don’t allow myself to work I feel uneasy and angry that I’m not using it.."</p>
+      <p><strong>Source:</strong> <a href="https://arttalksea.com/interview/elaine-roberto-navas-in-conversation-with-tony-godfrey/" target="_blank">Phttps://arttalksea.com/interview/elaine-roberto-navas-in-conversation-with-tony-godfrey/
+      </a></p>
+    </article>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Philippine Arts Website | Cavite State University
+</footer>
+
+</body>
+</html>

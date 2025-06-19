@@ -1,0 +1,465 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Philippine Arts Gallery</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #C4A484;
+  color: #333;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar {
+  width: 70px;
+  background-color: #3b3126;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  position: fixed;
+  height: 300vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.sidebar:hover {
+  width: 220px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #fff;
+  width: 100%;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.sidebar a i {
+  min-width: 25px;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.sidebar a span {
+  display: none;
+}
+
+.sidebar:hover a span {
+  display: inline;
+}
+
+.sidebar a:hover {
+  background-color: #6e614f;
+}
+
+
+.main {
+  margin-left: 70px;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar:hover ~ .main {
+  margin-left: 220px;
+}
+
+.hero-section {
+  position: relative;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.top-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50vh;
+  width: 100vw;
+  background: url('https://always-reforming.com/wp-content/uploads/2021/05/pexels-photo-3004909.jpg') no-repeat center;
+  background-size: cover;
+  z-index: -1;
+}
+
+.hero-title {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.section-title {
+  font-size: 80px;
+  font-family: 'Cinzel', serif;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-shadow:
+    0 0 40px #3e2f25,
+    0 0 40px #3e2f25,
+    2px 2px 4px rgba(0, 0, 0, 0.4);
+  border: 5px solid rgba(255, 255, 255, 0.7);
+  outline: 5px solid rgba(101, 67, 33, 0.5);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  display: inline-block;
+  padding: 10px 40px;
+  border-radius: 14px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  padding: 0px 0px;
+  background-color: #C4A484;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 50px;
+}
+
+.artist-section {
+  display: flex;
+  align-items: flex-start;
+  padding: 0px 20px;
+  gap: 100px;
+  flex-wrap: wrap;
+  border-bottom: 3px solid #5C4033;
+}
+
+.artist-info {
+  width: 280px;
+  text-align: center;
+}
+
+.artist-info img {
+  width: 80%;
+  height: 220px;
+  border-radius: 15px;
+  margin: 0px auto 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.artist-name {
+  font-size: 20px;
+  margin-top: 5px;
+  font-weight: bold;
+  font-family: 'Pacifico', cursive;
+  color: #4e3a34;
+}
+
+.gallery-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: flex-start;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.art-item {
+  position: relative;
+  width: 200px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.art-item img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+}
+
+.hover-text {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  width: 50%;
+  text-align: center;
+  padding: 8px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.art-item:hover .hover-text {
+  opacity: 1;
+}
+
+.section-label {
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: #4e3a34;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 20px auto 5px;
+  padding: 10px 30px;
+  display: inline-block;
+  position: relative;
+  background-color: rgba(253, 248, 244, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  outline: 2px solid rgba(101, 67, 33, 0.5);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  backdrop-filter: blur(6px);
+}
+
+.content .artist-section:nth-of-type(1) {
+  background-color: #fdf5e6;
+}
+
+.content .artist-section:nth-of-type(2) {
+  background-color: #faebd7;
+}
+
+.content .artist-section:nth-of-type(3) {
+  background-color: #f5f5dc;
+}
+
+.content .artist-section:nth-of-type(4) {
+  background-color: #fffaf0;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color:  #3b3126;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  margin-top: 50px;
+  left: 70px;
+  width: calc(100% - 70px);
+  transition: left 0.3s, width 0.3s;
+}
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <a href="indexK.html"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="biography.html"><i class="fas fa-user"></i><span>Biographies</span></a>
+    <a href="literary.html"><i class="fas fa-feather-alt"></i><span>Literary Works</span></a>
+    <a href="legacy.html"><i class="fas fa-flag"></i><span>Legacy</span></a>
+    <a href="timeline.html"><i class="fas fa-calendar"></i><span>Timeline</span></a>
+    <a href="quotes.html"><i class="fas fa-quote-left"></i><span>Quotes</span></a>
+    <a href="illustrations.html"><i class="fas fa-paint-brush"></i><span>Illustrations</span></a>
+    <a href="interviews.html"><i class="fas fa-comments"></i><span>Opinions</span></a>
+    <a href="interactive.html"><i class="fas fa-gamepad"></i><span>Interactive</span></a>
+    <a href="references.html"><i class="fas fa-book-open"></i><span>References</span></a>
+  </div>
+    <div class="main">
+      <div class="top-image">
+        <div class="section-title">FAMOUS ARTWORKS</div>
+      </div>
+<header class="hero-section">
+  <div class="top-image"></div>
+  <div class="hero-title">
+    <h1 class="section-title">FAMOUS ARTWORKS</h1>
+  </div>
+</header>
+      <div class="content">
+        <div class="artist-section">
+          <div class="artist-info">
+            <div class="section-label">ARTIST</div>
+            <img src="https://www.prints-online.com/p/164/juan-luna-novicio-1857-1899-engraving-colored-14336754.jpg.webp" alt="Juan Luna">
+            <div class="artist-name">Juan Luna</div>
+          </div>
+
+          <div class="gallery-wrapper">
+            <div class="section-label">ARTWORK</div>
+            <div class="gallery">
+              <div class="art-item">
+                <a href="https://medium.com/@jordangasparr/spoliarium-by-juan-luna-f1b3103ef450" target="_blank">
+                  <img src="https://miro.medium.com/v2/resize:fit:608/format:webp/1*eeIFVej3-4gG-VT6fNkz3w.jpeg" alt="Spoliarium">
+                </a>
+                <div class="hover-text">Spoliarium</div>
+              </div>
+
+              <div class="art-item">
+                <a href="https://www.museodelprado.es/en/the-collection/art-work/cleopatra/6572106b-eea1-49cc-b616-78cc11aa2f97" target="_blank">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/The_Death_of_Cleopatra_by_Juan_Luna1881.jpg" alt="The Death of Cleopatra">
+                </a>
+                <div class="hover-text">The Death of Cleopatra</div>
+              </div>
+              <div class="art-item">
+                <a href="https://epa.culturalcenter.gov.ph/3/82/2303/" target="_blank">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Tampuhan_by_Juan_Luna.jpg/640px-Tampuhan_by_Juan_Luna.jpg" alt="Tampuhan">
+                </a>
+                <div class="hover-text">Tampuhan</div>
+              </div>
+              <div class="art-item">
+                <a href="https://epa.culturalcenter.gov.ph/3/82/2253/" target="_blank">
+                  <img src="https://ccp-wagtail-bucket.s3.amazonaws.com/images/V_WORKS_El_Pacto_1.width-3000.jpg" alt="El Pacto de Sangre">
+                </a>
+                <div class="hover-text">El Pacto de Sangre</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="artist-section">
+          <div class="artist-info">
+            <div class="section-label">ARTIST</div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgpd7H_d49rLnc9BmSfD2snwUslgrg7NeMbA&s" alt="Amorsolo">
+            <div class="artist-name">Fernando Amorsolo</div>
+          </div>
+
+          <div class="gallery-wrapper">
+            <div class="section-label">ARTWORK</div>
+            <div class="gallery">
+
+              <div class="art-item">
+                <a href="https://epa.culturalcenter.gov.ph/3/82/2272/" target="_blank">
+                  <img src="https://ccp-wagtail-bucket.s3.amazonaws.com/images/Amorsolo1921.width-3000.jpg" alt="Amorsolo 1921">
+                </a>
+                <div class="hover-text">Planting Rice</div>
+              </div>
+
+              <div class="art-item">
+                <a href="https://ybcclub8.artstation.com/projects/zDOGgd" target="_blank">
+                  <img src="https://kahimyang.com/resources-15/the_making_of_philippine_flag.webp" alt="The Making of the Philippine Flag">
+                </a>
+                <div class="hover-text">Making of the Philippine Flag </div>
+              </div>
+
+              <div class="art-item">
+                <a href="https://epa.culturalcenter.gov.ph/3/82/2149/" target="_blank">
+                  <img src="https://i.redd.it/ga2grqyc605c1.jpg" alt="Artwork 3">
+                </a>
+                <div class="hover-text">The Bombing of the Intendencia </div>
+              </div>
+
+              <div class="art-item">
+                <a href="https://ilovetoeatbooks.blogspot.com/2012/10/the-fruit-pickers-under-mango-tree.html" target="_blank">
+                  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj4ZPPSllJi-fEL0e_7DnqjIe5jHTr_VFqzN2tfVy4Dj1EtgDsGlBN4dUuT5zgf9kmMensZl0pyTsVI14opHYgJ7gKPOAB62fAXBA_8v18rNs3TGUVcNuSaxicUv_E68wJHXjvg6Mt0mJo/s640/Fruit_Pickers_Under_the_Mango_Tree_Fernando_Amorsolo.JPG" alt="Fruit Pickers">
+                </a>
+                <div class="hover-text">Fruit Pickers Under Mango Tree </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="artist-section">
+          <div class="artist-info">
+            <div class="section-label">ARTIST</div>
+            <img src="https://www.silverlensgalleries.com/assets/artists/arturo-luz/bio/Arturo%20Luz.jpg" alt="Arturo Luz">
+            <div class="artist-name">Arturo Luz</div>
+          </div>
+
+          <div class="gallery-wrapper">
+            <div class="section-label">ARTWORK</div>
+            <div class="gallery">
+
+              <div class="art-item">
+                <a href="https://ateneoartgallery.com/collections/vendador-de-flores" target="_blank">
+                  <img src="https://ateneoartgallery.imgix.net/062718-AAG-Collection-Documentation-022.jpg?auto=format%2Ccompress&crop=focalpoint&fillInterval=50&fillTransforms=1&fit=min&fp-x=0.5&fp-y=0.5&ixlib=php-1.1.0&q=70&w=1200&s=46bd4e588cc63c2ffe4edc8eadc8faa7" alt="Vendador de Flores">
+                </a>
+                <div class="hover-text">Vendador de Flores</div>
+              </div>
+
+              <div class="art-item">
+                <a href="https://www.invaluable.com/auction-lot/arturo-luz-1926-2021-imaginary-landscape-6-c-f884b78bb4#:~:text=They%20are%20imagined%2C%20transformed%2C%20invented,black%20and%20golden%20ochre%20strips." target="_blank">
+                  <img src="https://media.mutualart.com/Images//2011_09/04/15/152219760/0f7f3d24-cd47-4830-b1b7-c3f635a08d6b.Jpeg" alt="Artwork 2 by Arturo Luz">
+                </a>
+                <div class="hover-text">Imaginary Landscapes</div>
+              </div>
+
+              <div class="art-item">
+                <a href="https://www.singulart.com/blog/en/2024/04/12/bagong-taon-by-arturo-luz/" target="_blank">
+                  <img src="https://ccp-wagtail-bucket.s3.amazonaws.com/images/V_WORKS_Bagong_Taon_1.width-3000.jpg" alt="Bagong Taon">
+                </a>
+                <div class="hover-text">Bagong Taon</div>
+              </div>
+
+              <div class="art-item">
+                <a href="https://members.salcedoauctions.com/item/13247" target="_blank">
+                  <img src="https://www.galeriejoaquin.com/images/paintings_big/TCIL-4.jpg" alt="Artwork 4 by Arturo Luz">
+                </a>
+                <div class="hover-text">Cities of the Past</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="artist-section">
+          <div class="artist-info">
+            <div class="section-label">ARTIST</div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-MDMmTYrHBsznZbDL-Vd-raZMx8DsRPeBDw&s" alt="Vicente Manansala">
+            <div class="artist-name">Vicente Manansala</div>
+          </div>
+
+          <div class="gallery-wrapper">
+            <div class="section-label">ARTWORK</div>
+            <div class="gallery">
+
+              <div class="art-item">
+                <a href="https://www.scribd.com/document/544722336/1-THE-BIRD-SEL-WPS-Office#:~:text=The%20Bird%20Seller%20(1976)%20by,color%20palette%20and%20subject%20matter." target="_blank">
+                  <img src="https://www.christies.com/img/LotImages/2012/HGK/2012_HGK_02906_2135_000(vicente_silva_manansala124143).jpg?mode=max" alt="The Bird Seller">
+                </a>
+                <div class="hover-text">The Bird Seller (1976)</div>
+              </div>
+
+              <div class="art-item">
+                <a href="https://www.theartesan.com/product-page/pounding-rice-nagbabayo" target="_blank">
+                  <img src="https://static.wixstatic.com/media/e22221_5110a99fd8b840b79a0697298ef2fc0e~mv2.jpg/v1/fill/w_525,h_525,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/e22221_5110a99fd8b840b79a0697298ef2fc0e~mv2.jpg" alt="Pounding Rice">
+                </a>
+                <div class="hover-text">Pounding Rice (Nagbabayo)</div>
+              </div>
+
+              <div class="art-item">
+                <a href="https://epa.culturalcenter.gov.ph/3/82/2222/" target="_blank">
+                  <img src="https://ccp-wagtail-bucket.s3.amazonaws.com/images/V_WORKS_Madonna_1_a0ZtnoN.width-3000.jpg" alt="Madonna of the Slums">
+                </a>
+                <div class="hover-text">Madonna of the Slums</div>
+              </div>
+
+              <div class="art-item">
+                <a href="https://members.salcedoauctions.com/item/30990" target="_blank">
+                  <img src="https://api-2.salcedoauctions.com/assets/photos/75694.jpg" alt="Vicente Manansala Artwork 4">
+                </a>
+                <div class="hover-text">Planting Rice</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          © 2025 PHILIPPINE ARTS WEBSITE | CAVITE STATE UNIVERSITY
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

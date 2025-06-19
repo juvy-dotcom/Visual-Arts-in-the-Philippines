@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Philippine Arts and Culture</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  
+  <style>
+    
+    
+
+    .top-banner {
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+      position: relative;
+      z-index: 0;
+      margin-left: 70px;
+      transition: margin-left 0.3s ease;
+    }
+
+    .sidebar:hover ~ .top-banner {
+      margin-left: 220px;
+    }
+
+    .top-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .content {
+      margin-left: 70px;
+      padding: 40px;
+      transition: margin-left 0.3s ease;
+      position: relative;
+      z-index: 2;
+      margin-top: -200px;
+    }
+
+    .sidebar:hover ~ .content {
+      margin-left: 220px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .flag {
+      width: 150px;
+      height: 150px;
+      background: rgb(151, 145, 145);
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .flag img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #fcfcff;
+      text-shadow: 2px 2px 4px rgba(31, 30, 30, 0.993);
+    }
+
+    .intro {
+      background: #c2af9e;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .gallery-item,
+    .gallery-item1,
+    .gallery-item2 {
+      text-align: center;
+      margin: 10px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .gallery-item {
+      width: 500px;
+      height: 300px;
+    }
+
+    .gallery-item1 {
+      width: 500px;
+      height: 250px;
+    }
+
+    .gallery-item2 {
+      width: 250px;
+      height: 450px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #3b3126;
+      color: #fff;
+      position: fixed;
+      bottom: 0;
+      left: 70px;
+      width: calc(100% - 70px);
+      transition: left 0.3s, width 0.3s;
+      z-index: 4;
+    }
+
+    .sidebar:hover ~ footer {
+      left: 220px;
+      width: calc(100% - 220px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <a href="indexK.html"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="biography.html"><i class="fas fa-user"></i><span>Biographies</span></a>
+    <a href="literary.html"><i class="fas fa-feather-alt"></i><span>Literary Works</span></a>
+    <a href="legacy.html"><i class="fas fa-flag"></i><span>Legacy</span></a>
+    <a href="timeline.html"><i class="fas fa-calendar"></i><span>Timeline</span></a>
+    <a href="quotes.html"><i class="fas fa-quote-left"></i><span>Quotes</span></a>
+    <a href="illustrations.html"><i class="fas fa-paint-brush"></i><span>Illustrations</span></a>
+    <a href="interviews.html"><i class="fas fa-comments"></i><span>Opinions</span></a>
+    <a href="interactive.html"><i class="fas fa-gamepad"></i><span>Interactive</span></a>
+    <a href="references.html"><i class="fas fa-book-open"></i><span>References</span></a>
+  </div>
+
+  <div class="top-banner">
+    <img src="https://always-reforming.com/wp-content/uploads/2021/05/pexels-photo-3004909.jpg" alt="Top Banner">
+  </div>
+
+  <div class="content">
+    <div class="header">
+      <div class="flag">
+        <img src="https://wallpapercave.com/wp/wp2023826.jpg" alt="Philippine Flag">
+      </div>
+      <h1>Philippine Visual Arts</h1>
+    </div>
+
+     <div class="intro">
+      <h3>INTRODUCTION</h3>
+      <p>The visual arts of the Philippines reflect the country’s rich cultural heritage, blending indigenous traditions with colonial influences and contemporary creativity. 
+        From pre-colonial artifacts to Spanish-era religious paintings, and from revolutionary propaganda to modern experimental art, Filipino visual expressions capture the evolving identity of the nation.
+        Traditional crafts such as weaving, pottery, and woodcarving showcase indigenous artistry, while Spanish-inspired religious paintings and sculptures embody centuries of colonial influence. In the 20th century, artists like Fernando Amorsolo and Carlos “Botong” Francisco pioneered styles that highlighted Filipino daily life, historical struggles, and local landscapes. Today, Philippine visual arts continue to evolve, integrating digital media, street art, and global themes while preserving deep-rooted cultural narratives.
+      </p>
+      <h3 class="history"><strong> BRIEF HISTORY OF THE PHILIPPINE VISUAL ARTS</strong></h3>
+      <p>The Philippine visual arts have evolved through centuries, shaped by indigenous traditions, colonial influences, and modern innovations.</p>
+
+      <div class="details">
+        <h4> Pre-Colonial Period</h4>
+        <p> Art was functional and spiritual, seen in tattoos, pottery, weaving, and wood carving. Designs were influenced by nature and native beliefs.</p>
+        <h4> Spanish Colonial Period </h4>
+        <p> Art became religious under Spanish rule. Churches were decorated with paintings, sculptures, and retablos.
+          Artists like Juan Luna and Félix Hidalgo used European styles to express nationalism.</p>
+        <h4> American Period </h4>
+        <p> Art education improved, and styles became more secular and realistic, focusing on Filipino life and landscapes. 
+          Fernando Amorsolo popularized romantic rural scenes.</p>
+        <h4> Japanese Occupation</h4>
+        <p> Art reflected hardships and war. Some works promoted resistance or survival themes during wartime.</p>
+        <h4>Post-War and Modern Period </h4>
+        <p> Artists explored modernism, with abstract and experimental styles. Art became a way to express emotion, identity, and social change.</p>
+        <h4> Martial Law and Protest Art</h4>
+        <p>During Marcos' dictatorship, artists turned to social realism to expose oppression and poverty. Art became a form of resistance.</p>
+        <h4> Contemporary Period </h4>
+        <p> Art today is diverse, using new media, technology, and global themes. Artists tackle topics like identity, environment, and culture through installations, digital art, and street art.</p>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <div class="gallery-item">
+        <a href="https://artesdelasfilipinas.com/archives/50/the-manunggul-jar-as-a-vessel-of-history" target="_blank">
+        <img src="images/manunggul jar.png" alt="Manunggul Jar"> </a>
+        <p>Manunggul Jar</p>
+      </div>
+      <div class="gallery-item1">
+        <a href="https://www.nationalmuseum.gov.ph/exhibitions/fine-arts/gallery-spoliarium-hall/" target="_blank">
+        <img src="images/spolarium.jpg" alt="Spolarium"> </a>
+        <p>Spolarium</p>
+      </div>
+      <div class="gallery-item2">
+        <a href="https://www.esquiremag.ph/culture/books-and-art/the-lady-in-amorsolo-s-unfinished-painting-is-none-other-than-vicki-belo-s-mother-a1729-20181029" target="_blank"> 
+        <img src="images/unfinished painting.jpg" alt="Unfinished Painting"> </a>
+        <p>Unfinished Painting</p>
+      </div>
+    </div>
+  </div>
+
+    <footer>
+      &copy; 2025 Philippine Arts Website | Cavite State University
+    </footer>
+
+</body>
+</html>

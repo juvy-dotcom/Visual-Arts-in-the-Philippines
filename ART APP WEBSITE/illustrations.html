@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Illustration with photos</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      overflow: hidden;
+      background-image: url('images/spolarium1.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      
+    }     
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      border-bottom: 1px dotted black;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 150px;
+      background-color: rgb(207, 204, 204);
+      color: #000000;
+      text-align: center;
+      border-radius: 5px;
+      padding: 5px 0;
+      bottom: 100%px;
+      font-size: 14px;
+      position: absolute;
+      z-index: 1;
+      bottom: 100%;
+      margin-bottom: 10px;
+      margin-left: -80px;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+    }
+    .tooltip .tooltiptext::after {
+      content: '';
+      display: block;  
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -10px;
+      border-bottom: 10px solid transparent;
+      border-top: 10px solid rgb(207, 204, 204);
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+    }
+
+    
+
+
+    .main {
+      margin-left: 60px;
+      padding: 40px;
+      height: 100vh;
+      overflow-y: auto;
+      padding-bottom: 100px;
+      width: calc(100% - 60px);
+      transition: margin-left 0.3s;
+    }
+
+  
+    .sidebar.expanded ~ .main {
+    margin-left: 220px;
+    width: calc(100% - 250px);
+    }
+
+    .sidebar:hover ~ .main {
+      margin-left: 220px;
+    }  
+    h2 {
+      width:300px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 80px;
+      margin-top: 5vh;
+    }
+
+    .pic {
+      background-color: #ffffff ;
+      text-align: center;
+      position: relative;
+      overflow: visible;
+      padding: 5px;
+      box-shadow: 10 5px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .pic img {
+      opacity: 1;
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+    }
+
+    .pic-title {
+      font-weight: bold;
+      font-size: 16px;
+      color: #000000;
+      margin-top: 10px;
+    }
+
+    .pic-desc {
+      position: absolute;
+      top: auto;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.85);
+      color: #000000;
+      font-size: 14px;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+      padding: 0 10px;
+      box-sizing: border-box;
+      z-index: 5;
+      text-align: justify;
+    }
+
+    .pic:hover .pic-desc {
+      opacity: 1;
+      max-height: 100px;
+      overflow-y: auto;
+      margin-top: 5px;
+      z-index: 5;
+    }
+
+
+    .ImgView {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .ImgView img {
+      max-width: 80%;
+      max-height: 80%;
+      border: 5px solid white;
+      box-shadow: 0 0 15px black;
+      border-radius: 10px;
+    }
+    .ImgView-title {
+      position: relative;
+      font-weight: bold;
+      font-size: 24px;
+      color: #ffffff;
+      margin-bottom: 10px;
+      left: 10px;
+      bottom: 100px;
+      max-height: 500px;
+      max-width: 350px;
+      overflow-y: auto;
+      text-align: justify;
+    }
+
+    .ImgView:target {
+      display: flex;
+    }
+
+    .ImgView-close {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+      background: rgba(0,0,0,0.5);
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+
+    .sidebar:hover ~ footer {
+      left: 220px;
+      width: calc(100% - 220px);
+    
+    }
+  </style>
+</head>
+
+<body>
+
+ 
+<div class="sidebar">
+      <a href="indexK.html"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="biography.html"><i class="fas fa-user"></i><span>Biographies</span></a>
+      <a href="literary.html"><i class="fas fa-feather-alt"></i><span>Literary Works</span></a>
+      <a href="legacy.html"><i class="fas fa-flag"></i><span>Legacy</span></a>
+      <a href="timeline.html"><i class="fas fa-calendar"></i><span>Timeline</span></a>
+      <a href="quotes.html"><i class="fas fa-quote-left"></i><span>Quotes</span></a>
+      <a href="illustrations.html"><i class="fas fa-paint-brush"></i><span>Illustrations</span></a>
+      <a href="interviews.html"><i class="fas fa-comments"></i><span>Opinions</span></a>
+      <a href="interactive.html"><i class="fas fa-gamepad"></i><span>Interactive</span></a>
+      <a href="references.html"><i class="fas fa-book-open"></i><span>References</span></a>
+    </div>
+
+
+  
+  <div class="main">
+    <h2><i class="fas fa-palette"></i> Illustrations and Photos</h2>
+    <div class="grid">
+
+
+
+      <div class="pic tooltip">
+        <a href="#img1"><img src="images/Girl.jpg" alt="Fernando Amorsolo"></a>
+        <div class="pic-title">Fruit Gatherer</div>
+        <div class="pic-desc">
+By Fernando Amarsolo (1950)</div><span class="tooltiptext">Click to view full image</span>
+      </div>
+      <div id="img1" class="ImgView"><a href="#" class="ImgView-close">&times;</a><img src="images/Girl.jpg" alt="Full View"><div class="ImgView-title"><a href="https://en.wikipedia.org/wiki/Fernando_Amorsolo" style=color:white;><i>Fernando Amorsolo</i></a>
+        <p><br>Fernando Amorsolo perfected the Filipino genre painting with its idyllic depictions of country life and the verdant rich landscapes. He made many outdoor studies of the Filipino countryside in an intense attempt to capture light and color. Amorsolo was not a social commentator; he was an aesthete who sought to highlight the grace and beauty of his country and its people, the natural setting, the common folk, and the dignity of their lives and work. Through his painting, Amorsolo sought to portray the alluring charm of a rural Filipina woman basking in sunlight and dressed in pastoral grace. Even though he was trained in the West, his depiction of Filipinas was not influenced by Western standards of beauty. This notion can be observed in his painting of a rural woman fruit gatherer with a bilao. He gives her the complexion of a Maria Clara and refers to her as the ‘dalagang bukid’. For him, she embodies his ideal Filipina.
+
+The warm, pleasant sunlight that shines brings to mind calm rural life and a sense of peace, especially when combined with delicate, dainty brush strokes.</p></div></div>
+
+
+
+      <div class="pic tooltip">
+        <a href="#img2"><img src="images/Virgenes.jpg" alt="Painting of Félix Resurrección Hidalgo"></a>
+        <div class="pic-title">Las Virgenes Cristianas Expuestas al Populacho</div><span class="tooltiptext">Click to view full image</span>
+        <div class="pic-desc">by Félix Resurrección Hidalgo (1884)</div>
+      </div>
+      <div id="img2" class="ImgView"><a href="#" class="ImgView-close">&times;</a><img src="images/Virgenes.jpg" alt="Full View"><div class="ImgView-title"><a href="https://en.wikipedia.org/wiki/F%C3%A9lix_Resurrecci%C3%B3n_Hidalgo" style=color:white;><i>Félix Resurrección Hidalgo</i></a><p><br>Las Virgenes Cristianas Expuestas al Populacho or The Christian Virgins Exposed to the Populace is one of the prominent history paintings done in 1884 by Filipino painter and propagandist, reformist, and patriot artist Félix Resurrección Hidalgo. The painting is also known as The Christian Virgins Exposed to the Rabble, Jovenes Cristianas Expuestas al Populacho Christian Maidens Exposed to the Populace, Christian Virgins Presented to the Populace, The Christian Virgins Being Exposed to the Populace, and Christian Virgins Exposed to the Mob.</p></div></div>
+
+ 
+
+      <div class="pic tooltip">
+        <a href="#img3"><img src="images/Twogirls.jpg" alt="Painting of Juan Luna"></a>
+        <div class="pic-title">España y Filipinas</div>
+        <div class="pic-desc">by Juan Luna (1884)</div><span class="tooltiptext">Click to view full image</span>
+      </div>
+      <div id="img3" class="ImgView"><a href="#" class="ImgView-close">&times;</a><img src="images/Twogirls.jpg" alt="Full View"><div class="ImgView-title"><a href="https://en.wikipedia.org/wiki/Juan_Luna" style=color:white;><i>Juan Luna</i></a><p><br>Juan Luna’s España y Filipinas (1884) is an allegorical painting that explores the colonial relationship between Spain and the Philippines. In it, a matronly figure symbolizing Spain guides a younger Filipina figure up a golden staircase toward a radiant future. Dressed in classical attire and adorned with laurel wreaths, they suggest harmony and progress under Spanish rule view shared by the ilustrados, the educated Filipino elite. One version of the painting, once owned by Pedro Paterno, is now in the National Gallery of Singapore.</p></div></div>
+
+
+
+      <div class="pic tooltip">
+        <a href="#img4"><img src="images/Medona.jpg" alt="Painting of Vicente Manansala "></a>
+        <div class="pic-title">Madonna of the Slums</div>
+        <div class="pic-desc">Vicente Mansala (1950)
+</div><span class="tooltiptext">Click to view full image</span>
+      </div>
+      <div id="img4" class="ImgView"><a href="#" class="ImgView-close">&times;</a><img src="images/Medona.jpg" alt="Full View"><div class="ImgView-title"><a href="https://en.wikipedia.org/wiki/Vicente_Manansala" style=color:white;><i>Vicente Manansal</i></a><p><br>Madonna of the Slums" is a 1950 painting by Filipino cubist painter Vicente Manansala. It depicts a mother and child, likely from the countryside, who have become residents of the urban slums. The painting is notable for its use of transparent cubism, a technique developed by Manansala, and its portrayal of the anxieties and insecurities of the postwar era. </p></div></div>
+
+
+
+      <div class="pic tooltip">
+        <a href="#img5"><img src="images/Arturo.jpg" alt="Artwork of Arturo Luz"></a>
+        <div class="pic-title">Candle Vendors</div>
+        <div class="pic-desc">By Arturo Luz (1952-1954)</div>
+        <span class="tooltiptext">Click to view full image</span>
+      </div>
+      <div id="img5" class="ImgView">
+        <a href="#" class="ImgView-close">&times;</a>
+        <img src="images/Arturo.jpg" alt="Full View">
+        <div class="ImgView-title"><a href="https://en.wikipedia.org/wiki/Arturo_Luz" style=color:white;><i>Arturo Luz</i></a><p><br>Arturo Luz, awarded National Artist for Visual Arts in 1997, was a celebrated Filipino painter known for his abstract and minimalist style using geometric shapes and simple colors. He was also the founding director of the Metropolitan Museum of Manila and represented the country in major international art exhibitions. Some of his notable works include Candle Vendors, Cities of the Past, and Imaginary Landscapes. Like Luz, many Filipino painters have gained both local and international recognition for their unique artistic styles and significant contributions to the visual arts.</p></div>
+      </div>
+
+
+
+      <div class="pic tooltip">
+        <a href="#img6"><img src="images/Abstract.jpg" alt="Art Placeholder"></a>
+        <div class="pic-title">Granadean Arabesque</div>
+        <div class="pic-desc">By Jose Tanig Joya (1958)</div>
+        <span class="tooltiptext">Click to view full image</span>
+      </div>
+      <div id="img6" class="ImgView">
+        <a href="#" class="ImgView-close">&times;</a>
+        <img src="images/Abstract.jpg" alt="Full View">
+        <div class="ImgView-title"><a href="https://en.wikipedia.org/wiki/Jose_T._Joya" style=color:white;><i>Jose Tanig Joya</i></a><p><br>Granadean Arabesque is a famous large-scale abstract painting by Filipino artist Jose Joya. It features bold yellow tones, dynamic brushstrokes, and textured sand mixed into the paint. Joya was a key figure in modern Philippine art and helped bring Filipino talent to the global stage, including the prestigious Venice Biennale in 1964 where this artwork was showcased. The painting is a standout example of his creativity and remains one of the most recognized works in Philippine art history.</p></div>
+      </div>
+
+
+
+      <div class="pic tooltip">
+        <a href="#img7"><img src="images/Mother nature.jpg" alt="Art Placeholder"></a>
+        <div class="pic-title">Mother Natures Bounty Harvest</div>
+        <div class="pic-desc">By Victorio Edades (1950)
+</div>
+        <span class="tooltiptext">Click to view full image</span>
+      </div>
+      <div id="img7" class="ImgView">
+        <a href="#" class="ImgView-close">&times;</a>
+        <img src="images/Mother nature.jpg" alt="Full View">
+        <div class="ImgView-title"><a href="https://en.wikipedia.org/wiki/Victorio_Edades" style=color:white;><i>Victorio Edades</i></a><p><br>Victorio Edades, known as the "father of modern Philippine art," introduced a new and innovative style of painting after studying in the U.S. One of his notable works, Mother Nature’s Bounty Harvest, was a collaboration with fellow artists Carlos “Botong” Francisco and Galo B. Ocampo. Together, they helped popularize mural painting in the Philippines, challenging traditional academic art styles. Although modern art was initially met with resistance, their work played a key role in shaping Philippine art. Mother Nature’s Bounty Harvest is one of their surviving murals, celebrating Filipinos’ deep connection with the land and nature’s abundance.</p></div>
+      </div>
+
+
+
+      <div class="pic tooltip">
+        <a href="#img8"><img src="images/Yellow confetti.jpg" alt="Art Placeholder"></a>
+        <div class="pic-title">Yellow Confetti</div>
+        <div class="pic-desc">By Benedicto Reyes Cabrera (1984)</div>
+        <span class="tooltiptext">Click to view full image</span>
+      </div>
+      <div id="img8" class="ImgView">
+        <a href="#" class="ImgView-close">&times;</a>
+        <img src="images/Yellow confetti.jpg" alt="Full View">
+        <div class="ImgView-title"><a href="https://en.wikipedia.org/wiki/Benedicto_Cabrera" style=color:white;><i>Benedicto Reyes Cabrera</i></a><p><br>The 1986 EDSA People Power Revolution marked a turning point in Philippine history, highlighting the rise of ordinary Filipinos and the fall of a dictatorship. During this period of unrest, renowned artist Benedicto Cabrera, also known as BenCab, created a powerful artwork titled Yellow Confetti. This piece captured the spirit of civic resistance and the collective anger of the Filipino people. It reflects the unity and determination of citizens coming together to fight for freedom and change.</p></div>
+      </div>
+     <footer>
+    &copy; 2025 Philippine Arts Website | Cavite State University
+  </footer>
+  </div>
+</body>
+</html>

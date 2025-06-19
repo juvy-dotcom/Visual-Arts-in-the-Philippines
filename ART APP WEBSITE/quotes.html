@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quotes of Famous Philippine Visual Artists</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="web.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      background: url(images/background.jpg) no-repeat center center fixed;
+      background-size: cover;
+      overflow-x: hidden;
+    }
+
+    body {
+      display: flex;
+      flex-direction: row;
+    }
+
+   
+    .main {
+      margin-left: 60px;
+      width: calc(100% - 60px);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .sidebar:hover ~ .main {
+      margin-left: 220px;
+    }  
+    .page-header {
+      margin: 171px;
+      margin-top: 5px;
+      margin-bottom: -25px;
+      margin-left: 90px;
+      display: flex;
+      align-items: center;
+      background-color: #1e1e2f;
+      padding: 10px 10px;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      text-shadow: 1px 1px 2px black;
+      z-index: 100;
+      font-family: 'Segoe UI', sans-serif;
+      align-self: flex-start;
+      gap: 10px
+    }
+
+    .page-header i {
+      font-size: 35px;
+      color: #FFD700;
+    }
+
+    .page-header .title {
+      font-size: 25px;
+      color: white;
+    }
+
+    .quote-gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 20px 40px;
+      gap: 100px;
+      flex-grow: 1;
+    }
+
+    .quote-card {
+      width: 250px;
+      margin-top: 10px;
+      margin-bottom: 85px;
+      background-color: rgba(255,255,255,0.7);
+      border: 2px solid #1e1e2f;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      box-shadow: 4px 4px 10px #1e1e2f;
+      border-radius: 8px;
+    }
+
+    .quote-card img {
+      width: 60%;
+      border: 2px solid #1e1e2f;
+    }
+
+    .artist {
+      font-size: 20px;
+      color: #1e1e2f;
+      margin: 10px 0 5px 0;
+      line-height: 1.2;
+    }
+
+    .quote {
+      font-size: 14px;
+      color: #2e1d1c;
+      line-height: 1.4;
+    }
+
+    .title {
+      font-size: 13px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .source {
+      font-size: 11px;
+      color: #555;
+      margin-top: 5px;
+      font-style: italic;
+    }
+
+    .source a {
+      color: #444;
+      text-decoration: underline;
+    }
+
+    .source a:hover {
+      color: #222;
+    }
+
+   
+    .sidebar:hover ~ footer {
+      left: 220px;
+      width: calc(100% - 220px);
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <a href="indexK.html"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="biography.html"><i class="fas fa-user"></i><span>Biographies</span></a>
+    <a href="literary.html"><i class="fas fa-feather-alt"></i><span>Literary Works</span></a>
+    <a href="legacy.html"><i class="fas fa-flag"></i><span>Legacy</span></a>
+    <a href="timeline.html"><i class="fas fa-calendar"></i><span>Timeline</span></a>
+    <a href="quotes.html"><i class="fas fa-quote-left"></i><span>Quotes</span></a>
+    <a href="illustrations.html"><i class="fas fa-paint-brush"></i><span>Illustrations</span></a>
+    <a href="interviews.html"><i class="fas fa-comments"></i><span>Opinions</span></a>
+    <a href="interactive.html"><i class="fas fa-gamepad"></i><span>Interactive</span></a>
+    <a href="references.html"><i class="fas fa-book-open"></i><span>References</span></a>
+  </div>
+
+  <div class="main">
+    <div class="page-header">
+      <i class="fas fa-quote-left"></i>
+      <span class="title">Quotes of Famous Philippine Visual Artists</span>
+      <i class="fas fa-quote-right"></i>
+    </div>
+
+    <div class="quote-gallery">
+      <div class="quote-card">
+        <img src="images/bencab.jpg" alt="Art">
+        <h2 class="artist">Benedicto Cabrera <br> “BenCab”</h2> 
+        <p class="title">National Artist for Visual Arts – Painter (2006)</p> <br>
+        <blockquote class="quote">“We always have a kind of elusive Filipino soul. I try to catch our nuances as Filipinos in my work.”</blockquote> <br>
+    <p class="source"> <br> 
+      Source:
+      <a href="https://www.esquiremag.ph/long-reads/features/benedicto-bencab-cabrera-profile-july-a5102-20240708-lfrm2"
+         target="_blank" rel="noopener">Esquire Philippines: Benedicto Cabrera, Filipino Artist in Flux (2024)</a>
+    </p>
+    </div>
+
+      <div class="quote-card">
+        <img src="images/arturoluz.jpg" alt="Art">
+        <h2 class="artist">Arturo Luz</h2> 
+        <p class="title">National Artist for Visual Arts – Painter (1997)</p>  <br>
+        <blockquote class="quote">“In my own little world, I know precisely what I want to do. And for me, the greatest satisfaction comes from creating works of art. Nothing can compare to it”</blockquote> <br>
+        <p class="source">Source: <a href="https://www.bworldonline.com/arts-and-leisure/2024/07/10/606969/arturo-luzs-minimalist-works-of-art/#:~:text=The%20artist%20found%20that%20his,STREAMLINED" target="_blank">BusinessWorld Online: Arturo Luz’s minimalist works of art</a></p>
+      </div>
+      <div class="quote-card">
+        <img src="images/abueva.jpg" alt="Art">
+        <h2 class="artist">Napoleon Abueva</h2> 
+        <p class="title">National Artist for Visual Arts – Sculpture (1976)</p> <br>
+        <blockquote class="quote">“Whatever desire is expressed in form, one conceives in realm of design. The mind in the hand can falter or surpass: if you answer which one and how much was done by love.”</blockquote>
+        <p class="source">Source: <a href="https://ncca.gov.ph/about-culture-and-arts/in-focus/an-interview-with-national-artist-for-sculpture-napoleon-abueva/" target="_blank">An Interview with National Artist for Sculpture Napoleon Abueva</a></p>
+      </div>
+      <div class="quote-card">
+        <img src="images/Ang.jpg" alt="Art">
+        <h2 class="artist">Ang Kiukok</h2> 
+        <p class="title">National Artist for Visual Arts (2001) Cubist, Surrealist, and Expressionist</p> <br>
+        <blockquote class="quote">During the Marcos regime, the National Artist has painted more brutal photographs; when asked why he was always filled with so much anger, he replied: "Why not? Open your eyes. Look at you. So much rage, sadness, ugliness, and insanity, too." </blockquote> 
+        <p class="source">Source: <a href="https://www.tatlerasia.com/lifestyle/arts/ang-kiukok-trivia" target="_blank">Tatler:  5 Things You May Not Know About Ang Kiukok</a></p>
+      </div>
+      <div class="quote-card">
+        <img src="images/jose.jpg" alt="Art">
+        <h2 class="artist">José Joya</h2> 
+        <p class="title">National Artist for Visual Arts (2003) Pioneer of Abstract Expressionism in the Philippines</p>
+        <blockquote class="quote">“In my works I always celebrate the women of the Philippines. I regard them with deep admiration and they continue to inspire me … I know very well the strength, hard work, and quiet dignity of Philippine women, for I am one of them.</blockquote> 
+        <p class="source">Source: <a href="https://geringerart.com/biography-of-jose-t-joya-philippine-national-artist/" target="_blank">Geringer Art: Biography of José Joya</a></p>
+      </div>
+        <div class="quote-card">
+        <img src="images/RonaldVentura.jpg" alt="Art">
+        <h2 class="artist">Ronald Ventura</h2>
+        <p class="title">Contemporary Filipino Visual Artist<br>Painter and Sculptor</p> <br>
+        <blockquote class="quote">“Art provides stimuli that people can respond to in so many different ways … it is the main function of art, to provide leads or cues for people to reflect more deeply and question.</blockquote> <br> <br>
+        <p class="source">Source: <a href="https://www.luxuo.com/culture/contemporary-artists-in-southeast-asia-interview-with-filipino-painter-and-sculptor-ronald-ventura.html" target="_blank">Contemporary artists in Southeast Asia: Interview Ronald Ventura</a></p>
+      </div>
+
+      <div class="quote-card">
+        <img src="images/magsaysayy.jpg" alt="Art">
+        <h2 class="artist">Anita Magsaysay-Ho</h2> <br>
+        <p class="title">Modernist Painter & Member of the "Thirteen Moderns"</p>
+        <blockquote class="quote">“In my works I always celebrate the women of the Philippines. I regard them with deep admiration and they continue to inspire me … I know very well the strength, hard work, and quiet dignity of Philippine women, for I am one of them.</blockquote>
+        <p class="source">Source: <a href="https://www.stpi.com.sg/artists/anita-magsaysay-ho/" target="_blank">STPI Gallery: Artist Anita Magsaysay-Ho</a></p>
+      </div>
+
+        <div class="quote-card">
+        <img src="images/ling.jpg" alt="Art">
+        <h2 class="artist">Christina Quisumbing Ramilo “Ling”</h2>
+        <p class="title">Contemporary Filipino Visual Artist<br>Curator and Art Educator</p> <br><br>
+        <blockquote class="quote">“Follow your passion and suffer the consequences. Experiment, fail, discover, learn.</blockquote> <br> <br> <br>
+        <p class="source">Source: <a href="https://lifestyle.inquirer.net/500003/the-value-of-giving-new-life-to-forgotten-objects-according-to-visual-artist-christina-ling-quisumbing-ramilo/" target="_blank">LIFESTYLE.INQ PROFILES: Visual Artist Ling</a></p>
+      </div>
+        <div class="quote-card">
+        <img src="images/abad.jpg" alt="Art">
+        <h2 class="artist">Pacita Abad</h2> <br>
+        <p class="title">Filipino Visual Artist<br>Filipina Modern Painter known for Trapunto Technique</p> <br>
+        <blockquote class="quote">“I have always believed that an artist has a special obligation to remind society of its social responsibility.</blockquote> <br> <br> <br>
+        <p class="source">Source: <a href="https://www.sfmoma.org/read/pacita-abad-a-living-tapestry-of-places/" target="_blank">SFMOMA: The Art of Pacita Abad</a></p>
+      </div>
+    </div>
+
+    <footer>
+    &copy; 2025 Philippine Arts Website | Cavite State University
+  </footer>
+  </div>
+</body>
+</html>
+  
